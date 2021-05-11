@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="java.io.PrintWriter"%>
+<%@ page import="user.User"%>
+<%@ page import="user.UserDAO"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,8 +29,7 @@
 			pause: 2500, //2.5동안 화면 멈춤
 			mode: 'fade', //수평 스크롤 방식을 사용할것이다
 			pager: true, //페이지 양옆 방향버튼을 보이게 할것인가
-			autoHover: true, //마우스를 올리면 멈추게 하기
-         
+		
 		});
 	});
 </script>
@@ -52,6 +53,7 @@
 <title>JSP 게시판 웹 사이트</title>
 </head>
 <body>
+
 	<%
 	String userID = null;
 	if (session.getAttribute("userID") != null) {
@@ -74,6 +76,23 @@
 					<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="main.jsp">메인</a></li>
 					<li class="nav-item"><a class="nav-link" href="bbs.jsp">게시판</a>
+					</li>
+					
+					<%
+					String id=(String)session.getAttribute("userID");
+					if (id == null) {
+					%>
+					<li class="nav-item"><a class="nav-link" ></a>
+					</li>
+					<%
+					} else {
+					%>
+					<li class="nav-item"><a class="nav-link" ><%=(String)session.getAttribute("userID")%>님 환영합니다.</a>
+					</li>
+					<%
+					}
+					%>
+					<li class="nav-item"><a class="nav-link" ></a>
 					</li>
 					<%
 					if (userID == null) {
@@ -109,8 +128,8 @@
 		<div class="bg-light p-5 rounded-lg m-3">
 			<div class="container">
 				<h1>웹사이트 소개</h1>
-				<p>JSP 연습으로 만든 웹사이트. <br> 부트스트랩을 더 연습해야겠음.</p>
-				<p><a class="btn btn-primary btn-pull" href="#" role="button">자세히 알아보기</a></p>
+				<p>JSP 와 부트스프랩을 습으로 만든 웹사이트. <br> JSP와 부트스트랩 공부를 더 열심히 해야지. <br> 스프링은 언제 하냐...</p>
+				<p><a class="btn btn-primary btn-pull" href="https://getbootstrap.com/" role="button">자세히 알아보기</a></p>
 			</div>
 		</div>
 	</div>
