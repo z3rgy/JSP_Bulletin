@@ -16,9 +16,12 @@
   		
   		<div class="container-fluid">
 		<a class="navbar-brand" href="main.jsp">JSP 게시판</a>
-    	<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      		<span class="navbar-toggler-icon"></span>
-		</button>
+ 			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarNav"
+				aria-controls="navbarNav" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
 		
     	<div class="collapse navbar-collapse" id="navbarNav">
       		<ul class="nav nav-pills">
